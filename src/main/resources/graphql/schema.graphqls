@@ -1,0 +1,19 @@
+type Transaction {
+    id: ID
+    amount: Float
+    timestamp: String
+}
+
+type AccountDetails {
+    accountName: String
+    transactions: [Transaction]
+}
+
+type AccountOwnerDetails {
+    ownerName: String
+    accounts: [AccountDetails]
+}
+
+type Query {
+    accountOwnerDetails(ownerId: ID!): AccountOwnerDetails
+}
